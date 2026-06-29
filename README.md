@@ -1,4 +1,4 @@
-# RTL Lab
+# IP Lib
 
 This work includes several RTL components.
 

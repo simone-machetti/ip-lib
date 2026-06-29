@@ -15,12 +15,12 @@ verilator \
     --trace-max-width 0 \
     -Wall \
     -Wno-fatal \
-    -I"${CODE_HOME}/rtl-lab/rtl" \
+    -I"${CODE_HOME}/ip-lib/rtl" \
     --top-module "tb_${SEL_TOP_LEVEL}" \
-    "${CODE_HOME}/rtl-lab/tb/tb_${SEL_TOP_LEVEL}.sv" \
-    -Mdir "${CODE_HOME}/rtl-lab/sim/${SEL_OUT_DIR}/build/obj_dir" \
-    -o "${CODE_HOME}/rtl-lab/sim/${SEL_OUT_DIR}/build/simv" \
-    | tee "${CODE_HOME}/rtl-lab/sim/${SEL_OUT_DIR}/output/compile.log"
+    "${CODE_HOME}/ip-lib/tb/tb_${SEL_TOP_LEVEL}.sv" \
+    -Mdir "${CODE_HOME}/ip-lib/sim/${SEL_OUT_DIR}/build/obj_dir" \
+    -o "${CODE_HOME}/ip-lib/sim/${SEL_OUT_DIR}/build/simv" \
+    | tee "${CODE_HOME}/ip-lib/sim/${SEL_OUT_DIR}/output/compile.log"
 
-exec "${CODE_HOME}/rtl-lab/sim/${SEL_OUT_DIR}/build/simv" "$@" \
-    | tee "${CODE_HOME}/rtl-lab/sim/${SEL_OUT_DIR}/output/run.log"
+exec "${CODE_HOME}/ip-lib/sim/${SEL_OUT_DIR}/build/simv" "$@" \
+    | tee "${CODE_HOME}/ip-lib/sim/${SEL_OUT_DIR}/output/run.log"
